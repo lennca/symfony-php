@@ -6,7 +6,7 @@ function CalculateGrossPrice(netPrice, tax) {
 
 function GetMaxPrice(articles) {
   let max = 0;
-  if(articles.length < 1) return max;
+  if(!articles || articles.length < 1) return max;
 
   for (const article of articles) {
     const { pris, momssats } = article;
@@ -19,7 +19,7 @@ function GetMaxPrice(articles) {
 
 function GetMinPrice(articles) {
   let min = 0;
-  if(articles.length < 1) return min;
+  if(!articles || articles.length < 1) return min;
 
   for (const article of articles) {
     const { pris, momssats } = article;
