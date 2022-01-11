@@ -50,8 +50,8 @@ class ProduktRepository {
   public function sortArray(array $unsortedArray, string $key): array {
     $sortedArray = array_merge(array(), $unsortedArray);
 
-    $sortedArray = $this->isertionSort($sortedArray, $key);
-    #usort($sortedArray, fn($curr, $next) => strcmp(strtolower($curr->{$key}), strtolower($next->{$key})));
+    #$sortedArray = $this->isertionSort($sortedArray, $key);
+    usort($sortedArray, fn($curr, $next) => strcmp(strtolower($curr->{$key}), strtolower($next->{$key})));
     return $sortedArray;
   }
 

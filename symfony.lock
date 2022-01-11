@@ -299,18 +299,6 @@
             "config/packages/test/monolog.yaml"
         ]
     },
-    "symfony/notifier": {
-        "version": "6.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "5.0",
-            "ref": "c31585e252b32fe0e1f30b1f256af553f4a06eb9"
-        },
-        "files": [
-            "config/packages/notifier.yaml"
-        ]
-    },
     "symfony/phpunit-bridge": {
         "version": "6.0",
         "recipe": {
@@ -341,12 +329,6 @@
     "symfony/process": {
         "version": "v6.0.2"
     },
-    "symfony/property-access": {
-        "version": "v6.0.2"
-    },
-    "symfony/property-info": {
-        "version": "v6.0.2"
-    },
     "symfony/proxy-manager-bridge": {
         "version": "v6.0.2"
     },
@@ -365,9 +347,6 @@
     },
     "symfony/runtime": {
         "version": "v6.0.0"
-    },
-    "symfony/serializer": {
-        "version": "v6.0.2"
     },
     "symfony/service-contracts": {
         "version": "v3.0.0"
@@ -395,19 +374,6 @@
         "files": [
             "config/packages/twig.yaml",
             "templates/base.html.twig"
-        ]
-    },
-    "symfony/validator": {
-        "version": "6.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "4.3",
-            "ref": "3eb8df139ec05414489d55b97603c5f6ca0c44cb"
-        },
-        "files": [
-            "config/packages/test/validator.yaml",
-            "config/packages/validator.yaml"
         ]
     },
     "symfony/var-dumper": {
