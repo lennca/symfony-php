@@ -1,3 +1,4 @@
+# Tells Symfony to look for routes defined as annotations in /src/Controller
 controllers:
     resource: ../src/Controller/
     type: annotation
