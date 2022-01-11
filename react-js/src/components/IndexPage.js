@@ -47,7 +47,7 @@ function IndexPage() {
         </div>
         <h3>Kategorier:</h3>
         {groupProducts(products).map((kategori) => {
-          return <Kategori kategori={kategori}/>
+          return <Kategori kategori={kategori} key={kategori.category}/>
         })}
         </>
       )}

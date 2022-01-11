@@ -1,20 +1,15 @@
 function GroupProducts(products) {
   const groupedProducts = []
   products.forEach(product => {
-    const { artiklar_benamning, lagersaldo, momssats, pris, artikelkategorier_id } = product
-    let index = groupedProducts.findIndex(category => category.category.toLowerCase() === artikelkategorier_id.toLowerCase())
+    let index = groupedProducts.findIndex(category => category.category.toLowerCase() === product.artikelkategorier_id.toLowerCase())
     if(index >= 0) {
-      groupedProducts[index].products.push({
-        artiklar_benamning, lagersaldo, momssats, pris, artikelkategorier_id
-      })
+      groupedProducts[index].products.push(product)
     } else {
       groupedProducts.push({
-        category: artikelkategorier_id,
+        category: product.artikelkategorier_id,
         products: []
       })
-      groupedProducts[groupedProducts.length -1].products.push({
-        artiklar_benamning, lagersaldo, momssats, pris, artikelkategorier_id
-      })
+      groupedProducts[groupedProducts.length -1].products.push(product)
     }
   })
   return groupedProducts

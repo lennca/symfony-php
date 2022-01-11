@@ -6,7 +6,7 @@ function Kategori({ kategori }) {
     <div>
       <h1>{kategori.category}</h1>
       {kategori.products.map((produkt) => {
-        return <Artikel produkt={produkt} />
+        return <Artikel produkt={produkt} key={produkt.id} />
       })}
     </div>
   );
