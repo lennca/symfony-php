@@ -1,5 +1,6 @@
 {
   "name": "react-js",
+  "proxy": "https://dev14.ageraehandel.se",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
