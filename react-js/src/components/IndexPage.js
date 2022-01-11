@@ -3,11 +3,14 @@ import { fetchData } from '../services/APIService';
 import { Sort } from '../utils/Sort';
 import { AddMissingProperty } from '../utils/AddMissingProperty';
 import { GroupProducts } from '../utils/GroupProducts';
+import Kategori from './Kategori'
 
 function IndexPage(props) {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
     async function fetchDataFromAPI() {
       try {
         const { data: { products } = [] } = await fetchData()
@@ -17,6 +20,7 @@ function IndexPage(props) {
         const categories = GroupProducts(sortedProducts)
         const sortedCategories = Sort(categories, 'category')
         setProducts(sortedCategories)
+        setLoading(false)
       } catch (error) {
         console.log(error.message)
       }
@@ -28,13 +32,20 @@ function IndexPage(props) {
   return (
     <div>
       <h1>Arbetsprov Montania</h1>
-      <h3>Info:</h3>
-      <div>
-        <p>Lägst pris: </p>
-        <p>Högst pris: </p>
-        <p>Antal artiklar: </p>
-      </div>
-      <h3>Kategorier:</h3>
+      {!loading && (
+        <>
+        <h3>Info:</h3>
+        <div>
+          <p>Lägst pris: </p>
+          <p>Högst pris: </p>
+          <p>Antal artiklar: </p>
+        </div>
+        <h3>Kategorier:</h3>
+        {products.map((kategori) => {
+          return <Kategori kategori={kategori}/>
+        })}
+        </>
+      )}
     </div>
   );
 }
