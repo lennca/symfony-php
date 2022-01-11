@@ -10,7 +10,6 @@ class APIService {
     $this->httpClient = $httpClient;
   }
 
-    
   /**
    * fetchProducts
    * Function that fetch json from API.
