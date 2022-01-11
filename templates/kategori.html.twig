@@ -1,0 +1,7 @@
+<div>
+  <h3>{{ kategori.getKategoriBenamning()|upper }}</h3>
+  {% for artikel in kategori.getProdukter() %}
+    {{ include('./artikel.html.twig', {artikel: artikel}) }}
+  {% endfor %}
+</div>
+<hr/>

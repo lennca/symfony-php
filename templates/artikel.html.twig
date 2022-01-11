@@ -1,0 +1,9 @@
+<div class="artikel-container">
+  <p class="artikel-item">{{ artikel.artiklar_benamning }}</p>
+  <p class="artikel-item">{{ artikel.getBruttoPris() }} kr (inkl moms)</p>
+  {% if artikel.getLagersaldo() > 0 %}
+    <p class="artikel-item">I lager ({{artikel.getLagersaldo()}} kvar)</p>
+  {% else %}
+    <p class="artikel-item">Slutsåld</p>
+  {% endif %}
+</div>
