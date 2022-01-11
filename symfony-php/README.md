@@ -9,5 +9,6 @@ Make sure you have the following installed:
 ### Start the application
 
 1. Locate the root directory (same as this README)
-2. Run `composer install`
-3. Run `symfony server:start`
+2. Rename `/.env.example` to `/.env` and provide your env-variables
+3. Run `composer install`
+4. Run `symfony server:start`
