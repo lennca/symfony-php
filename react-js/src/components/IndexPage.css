@@ -2,8 +2,29 @@
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 16px;
+  flex-direction: column;
 }
 
 .flex-item {
   flex: 1 1 0;
+}
+
+.info-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem;
+  background-color: white;
+  margin: 0 0.5rem 0.5rem 0;
+}
+
+@media screen and (min-width: 768px) {
+  #info-container {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+
+  .info-box {
+    padding: 1rem;
+  }
 }

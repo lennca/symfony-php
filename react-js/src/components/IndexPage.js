@@ -36,9 +36,15 @@ function IndexPage() {
       <h1>Arbetsprov Montania</h1>
       <h3>Info:</h3>
       <div id='info-container'>
-        <p className='flex-item'>Lägst pris: {GetMinPrice(products)} kr</p>
-        <p className='flex-item'>Högst pris: {GetMaxPrice(products)} kr</p>
-        <p className='flex-item'>Antal artiklar: {products.length} st</p>
+        <div className='flex-item info-box'>
+          <p>Lägst pris: {GetMinPrice(products)} kr</p>
+        </div>
+        <div className='flex-item info-box'>
+          <p>Högst pris: {GetMaxPrice(products)} kr</p>
+        </div>
+        <div className='flex-item info-box'>
+          <p>Antal artiklar: {products.length} st</p>
+        </div>
       </div>
       <h3>Kategorier:</h3>
       {groupProducts(products).map((kategori) => {
