@@ -1,9 +1,8 @@
 .artikel-box {
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 16px;
-}
-
-.artikel-item {
-  flex: 1 1 0;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 1rem;
 }

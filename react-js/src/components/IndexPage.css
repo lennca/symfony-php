@@ -3,3 +3,7 @@
   justify-content: space-evenly;
   margin-bottom: 16px;
 }
+
+.flex-item {
+  flex: 1 1 0;
+}
