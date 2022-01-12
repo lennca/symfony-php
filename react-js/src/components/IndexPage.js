@@ -9,17 +9,14 @@ import './IndexPage.css'
 
 function IndexPage() {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    setLoading(true)
     async function fetchDataFromAPI() {
       try {
         const { data: { products } = [] } = await fetchData()
         const updatedProducts = [...products.map((product) => AddMissingProperty(product))]
         const sortedProducts = Sort(updatedProducts, 'artiklar_benamning')
         setProducts(sortedProducts)
-        setLoading(false)
       } catch (error) {
         console.log(error.message)
       }
@@ -37,20 +34,16 @@ function IndexPage() {
   return (
     <div>
       <h1>Arbetsprov Montania</h1>
-      {!loading && (
-        <>
-        <h3>Info:</h3>
-        <div id='info-container'>
-          <p>Lägst pris: {GetMinPrice(products)}</p>
-          <p>Högst pris: {GetMaxPrice(products)}</p>
-          <p>Antal artiklar: </p>
-        </div>
-        <h3>Kategorier:</h3>
-        {groupProducts(products).map((kategori) => {
-          return <Kategori kategori={kategori} key={kategori.category}/>
-        })}
-        </>
-      )}
+      <h3>Info:</h3>
+      <div id='info-container'>
+        <p className='flex-item'>Lägst pris: {GetMinPrice(products)} kr</p>
+        <p className='flex-item'>Högst pris: {GetMaxPrice(products)} kr</p>
+        <p className='flex-item'>Antal artiklar: {products.length} st</p>
+      </div>
+      <h3>Kategorier:</h3>
+      {groupProducts(products).map((kategori) => {
+        return <Kategori kategori={kategori} key={kategori.category}/>
+      })}
     </div>
   );
 }
