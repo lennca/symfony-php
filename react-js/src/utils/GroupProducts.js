@@ -1,3 +1,8 @@
+/**
+ * Function that group products with correct category.
+ * @param {array} products Array of products.
+ * @returns {array} Array of catecories including products.
+ */
 function GroupProducts(products) {
   const groupedProducts = []
   products.forEach(product => {

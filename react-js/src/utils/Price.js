@@ -5,14 +5,10 @@ function CalculateGrossPrice(netPrice, tax) {
 }
 
 function GetMaxPrice(articles) {
-  let max = 0;
-  if(!articles || articles.length < 1) return max;
-
-  for (const article of articles) {
-    const { pris, momssats } = article;
-    const grossPrice = CalculateGrossPrice(pris, momssats);
-    if(grossPrice > max) max = grossPrice;
-  }
+  const max = articles.reduce((prev, curr) => {
+    const currentGross = CalculateGrossPrice(curr.pris, curr.momssats)
+    return prev > currentGross ? prev : currentGross;
+  }, 0);
 
   return max;
 }
